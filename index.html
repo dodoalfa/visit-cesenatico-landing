@@ -20,9 +20,9 @@
       --border: #E2E8F0;
       
       /* Colori tematici dinamici Reti di Prodotto */
-      --theme-color: #9E3B20;
-      --theme-gradient: linear-gradient(135deg, #9E3B20 0%, #C25E00 100%);
-      --theme-bg-light: #FDF6F0;
+      --theme-color: #0072CE;
+      --theme-gradient: linear-gradient(135deg, #0072CE 0%, #00A3E0 100%);
+      --theme-bg-light: #F0F9FF;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -205,9 +205,9 @@
       position: relative;
       background-size: cover;
       background-position: center;
-      padding: 90px 40px;
+      padding: 100px 40px;
       color: white;
-      min-height: 480px;
+      min-height: 500px;
       display: flex;
       align-items: center;
       transition: background-image 0.4s ease;
@@ -215,12 +215,12 @@
     .hero-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(90deg, rgba(15, 23, 42, 0.88) 0%, rgba(15, 23, 42, 0.5) 100%);
+      background: linear-gradient(90deg, rgba(15, 23, 42, 0.85) 0%, rgba(15, 23, 42, 0.45) 100%);
     }
     .hero-content {
       position: relative;
       z-index: 10;
-      max-width: 660px;
+      max-width: 680px;
     }
     .hero-pill-badge {
       display: inline-block;
@@ -235,7 +235,7 @@
       margin-bottom: 16px;
     }
     .hero-title {
-      font-size: 38px;
+      font-size: 40px;
       line-height: 1.15;
       font-weight: 800;
       margin-bottom: 16px;
@@ -304,7 +304,7 @@
       box-shadow: 0 16px 32px rgba(0,0,0,0.06);
     }
     .card-image-box {
-      height: 210px;
+      height: 220px;
       background-size: cover;
       background-position: center;
     }
@@ -538,8 +538,8 @@
   <div class="toolbar">
     <div class="toolbar-title">Visit Cesenatico • Prototipi Landing Tematiche</div>
     <div class="theme-selector">
-      <button class="theme-btn active" onclick="switchTheme('cultura')">1. Cultura &amp; Borgo</button>
-      <button class="theme-btn" onclick="switchTheme('spiagge')">2. Spiagge &amp; Mare</button>
+      <button class="theme-btn" onclick="switchTheme('cultura')">1. Cultura &amp; Borgo</button>
+      <button class="theme-btn active" onclick="switchTheme('spiagge')">2. Spiagge &amp; Mare</button>
       <button class="theme-btn" onclick="switchTheme('food')">3. Food &amp; Sapori</button>
       <button class="theme-btn" onclick="switchTheme('sport')">4. Sport &amp; Outdoor</button>
     </div>
@@ -553,10 +553,10 @@
   <div class="viewport-container">
     <div class="page-wrapper" id="page-wrapper">
       
-      <!-- HEADER CON MARCHIO VISIT CESENATICO + STEMMA COMUNE DI CESENATICO -->
+      <!-- HEADER CON MARCHIO VISIT CESENATICO + COMUNE DI CESENATICO -->
       <header class="site-header">
         <div class="header-brand-group">
-          <!-- Marchio Ufficiale Visit Cesenatico (Vettoriale Ufficiale) -->
+          <!-- Marchio Ufficiale Visit Cesenatico (Vettoriale Fedele da Brand Book) -->
           <div class="logo-container">
             <svg viewBox="0 0 380 68" fill="none" xmlns="http://www.w3.org/2000/svg">
               <defs>
@@ -589,15 +589,11 @@
           <!-- Stemma e Denominazione Ufficiale Comune di Cesenatico -->
           <div class="comune-logo-box">
             <svg viewBox="0 0 46 54" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <!-- Corona Turrita Istituzionale -->
               <path d="M7 11 L10 4 L16 8 L23 3 L30 8 L36 4 L39 11 Z" fill="#94A3B8" stroke="#475569" stroke-width="1.2" stroke-linejoin="round"/>
               <rect x="11" y="11" width="24" height="4" fill="#64748B"/>
-              <!-- Scudo Araldico -->
               <path d="M9 16 C9 16 9 38 23 48 C37 38 37 16 37 16 Z" fill="#0284C7" stroke="#0369A1" stroke-width="1.5"/>
-              <!-- Onde del Mare nello Scudo -->
               <path d="M9 34 Q 16 30, 23 34 T 37 34 L 37 38 C 31 43, 23 48, 23 48 C 23 48, 15 43, 9 38 Z" fill="#F8FAFC"/>
               <path d="M9 38 Q 16 35, 23 38 T 37 38 L 37 40 C 31 44, 23 48, 23 48 C 23 48, 15 44, 9 40 Z" fill="#0284C7"/>
-              <!-- Corona d'Alloro e Quercia -->
               <path d="M6 24 C4 35 12 48 23 52 C34 48 42 35 40 24" stroke="#16A34A" stroke-width="1.8" stroke-linecap="round" fill="none"/>
             </svg>
             <div class="comune-text">
@@ -620,9 +616,9 @@
       <section class="hero-section" id="hero-bg">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-          <span class="hero-pill-badge" id="hero-tag">Cultura e Buon Vivere</span>
-          <h1 class="hero-title" id="hero-title">Passeggia nella storia tra le vele di Leonardo</h1>
-          <p class="hero-desc" id="hero-desc">Vivi l'autenticità del Porto Canale Leonardesco, le storiche barche del Museo della Marineria e l'atmosfera viva del borgo romagnolo.</p>
+          <span class="hero-pill-badge" id="hero-tag">Spiagge e Mare</span>
+          <h1 class="hero-title" id="hero-title">Bandiera Blu da oltre 30 anni: relax e libertà sul mare</h1>
+          <p class="hero-desc" id="hero-desc">Sabbia dorata, fondali bassi e sicuri per famiglie, grandi regate veliche e la magia dei concerti all'alba sulla battigia.</p>
           <a href="#pillars-section" class="hero-cta" id="hero-cta">Scopri le esperienze <span>↓</span></a>
         </div>
       </section>
@@ -630,11 +626,11 @@
       <!-- BLOCCO A: PILLARS TEMATICI -->
       <section class="section-padding" id="pillars-section">
         <div class="section-header">
-          <div class="section-subtitle" id="pillars-subtitle">Eccellenze del Territorio</div>
-          <h2 class="section-title" id="pillars-title">I tesori autentici di Cesenatico</h2>
+          <div class="section-subtitle" id="pillars-subtitle">Esperienze tra Mare e Litorale</div>
+          <h2 class="section-title" id="pillars-title">Vivi l'Adriatico autentico</h2>
         </div>
         <div class="cards-grid" id="cards-container">
-          <!-- Popolato dinamicamente da JS -->
+          <!-- Popolato dinamicamente via JS -->
         </div>
       </section>
 
@@ -645,7 +641,7 @@
             <div>
               <span class="iat-info-badge">Servizio IAT Ufficiale</span>
               <h3>Ufficio Accoglienza Turistica</h3>
-              <p>Chiedi indicazioni personalizzate al personale ufficiale del Comune di Cesenatico per organizzare il tuo soggiorno.</p>
+              <p>Chiedi indicazioni personalizzate al personale ufficiale del Comune di Cesenatico per organizzare il tuo soggiorno al mare.</p>
               <div class="iat-data-row">📍 Viale Roma 112, 47042 Cesenatico (FC)</div>
               <div class="iat-data-row">📞 Tel: 0547 79435</div>
               <div class="iat-data-row">✉️ iat@comune.cesenatico.fc.it</div>
@@ -670,20 +666,20 @@
             </div>
             <div class="form-row">
               <label>Periodo indicativo di soggiorno</label>
-              <input type="text" class="form-field" placeholder="es. Giugno 2026, 3 notti">
+              <input type="text" class="form-field" placeholder="es. Luglio 2026, 1 settimana">
             </div>
             <div class="form-row">
               <label>Cosa ti interessa approfondire?</label>
               <div class="chips-container">
-                <span class="filter-chip active">Alloggi &amp; Hotel</span>
-                <span class="filter-chip">Eventi in città</span>
-                <span class="filter-chip">Ristoranti &amp; Food</span>
-                <span class="filter-chip">Piste ciclabili</span>
+                <span class="filter-chip active">Stabilimenti balneari</span>
+                <span class="filter-chip">Vela e Sport nautici</span>
+                <span class="filter-chip">Concerti ed Eventi</span>
+                <span class="filter-chip">Hotel vista mare</span>
               </div>
             </div>
             <div class="form-row">
               <label>Messaggio o richieste specifiche</label>
-              <textarea class="form-field" rows="3" placeholder="Scrivi qui eventuali domande su accessibilità, spiagge o itinerari..."></textarea>
+              <textarea class="form-field" rows="3" placeholder="Scrivi qui eventuali domande su stabilimenti convenzionati, spiagge libere o noleggi..."></textarea>
             </div>
             <button class="btn-submit-iat" onclick="alert('Richiesta inviata con successo allo staff IAT!')">
               Invia richiesta allo staff IAT
@@ -702,7 +698,7 @@
           <div class="service-card-box">
             <div class="service-icon-lg">🏨</div>
             <h4>Hotel sul Mare</h4>
-            <p>Accesso diretto alla spiaggia dorata e servizi all'avanguardia.</p>
+            <p>Accesso diretto alla spiaggia dorata e servizi balneari all'avanguardia.</p>
           </div>
           <div class="service-card-box">
             <div class="service-icon-lg">🚴</div>
@@ -717,7 +713,7 @@
           <div class="service-card-box">
             <div class="service-icon-lg">⛺</div>
             <h4>Camping &amp; Villaggi</h4>
-            <p>Vacanze all'aria aperta immerse nella verde pineta di Zadina.</p>
+            <p>Vacanze all'aria aperta immerse nella quiete della pineta marittima.</p>
           </div>
         </div>
       </section>
@@ -733,6 +729,48 @@
 
   <script>
     const thematicData = {
+      spiagge: {
+        color: '#0072CE',
+        /* Vista aerea panoramica della spiaggia, del molo e dei capanni da pesca di Cesenatico */
+        bg: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1400&q=80',
+        tag: 'Spiagge e Mare',
+        title: 'Bandiera Blu da oltre 30 anni: relax e libertà sul mare',
+        desc: 'Sabbia dorata, fondali bassi e sicuri per famiglie, grandi regate veliche e la magia dei concerti all\'alba sulla battigia.',
+        pillarsSubtitle: 'La Riviera per Tutti',
+        pillarsTitle: 'Vivere il mare tra relax, regate e tradizioni',
+        cards: [
+          {
+            title: 'Vela, Catamarani e Regate',
+            text: 'Cesenatico è un punto di riferimento per gli sport del vento: regate storiche, scuole di vela, windsurf e uscite in catamarano a largo.',
+            img: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80'
+          },
+          {
+            title: 'I Concerti all\'Alba sulla Battigia',
+            text: 'La musica che saluta il nuovo giorno a filo d\'acqua: orchestre e strumenti acustici mentre il sole sorge all\'orizzonte sul mare.',
+            img: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80'
+          },
+          {
+            title: 'Il "Barchèt" e la Tradizione Marinara',
+            text: 'Le antiche barche da pesca a vele al terzo solcano ancora il mare aperto durante le feste del porto e la tradizionale festa garibaldina.',
+            img: 'https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=800&q=80'
+          },
+          {
+            title: 'Notti sul Mare e Fuochi Pirotecnici',
+            text: 'I grandi spettacoli pirotecnici sul mare, le feste della Notte Rosa e le cene nei locali sui moli accesi dalle luci della sera.',
+            img: 'https://images.unsplash.com/photo-1498931299472-f7a63a5a1cfa?auto=format&fit=crop&w=800&q=80'
+          },
+          {
+            title: 'Spiagge Sicure e Family Friendly',
+            text: 'Stabilimenti balneari attrezzati, fondali bassi e sabbiosi ideali per bambini con la garanzia di sicurezza della Bandiera Blu.',
+            img: 'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=800&q=80'
+          },
+          {
+            title: 'Marina di Cesenatico e Darsena',
+            text: 'Il porto turistico moderno a fianco del borgo storico: centinaia di posti barca e servizi per il diportismo nautico.',
+            img: 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=800&q=80'
+          }
+        ]
+      },
       cultura: {
         color: '#9E3B20',
         bg: 'https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=1400&q=80',
@@ -756,32 +794,6 @@
             title: 'Piazza delle Conserve',
             text: 'Le antiche ghiacciaie storiche tronco-coniche scavate nel terreno, dove si conservava il pescato fresco.',
             img: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80'
-          }
-        ]
-      },
-      spiagge: {
-        color: '#0072CE',
-        bg: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1400&q=80',
-        tag: 'Spiagge e Mare',
-        title: 'Bandiera Blu da oltre 30 anni: relax e libertà sul mare',
-        desc: 'Ampie distese di sabbia dorata, stabilimenti balneari all\'avanguardia, spiagge libere ecosostenibili e concerti all\'alba.',
-        pillarsSubtitle: 'La Riviera del Benessere',
-        pillarsTitle: 'Vivere il mare tra relax e natura',
-        cards: [
-          {
-            title: 'Spiaggia delle Tamerici',
-            text: 'Unica in Italia: un\'oasi rinaturalizzata dove gli ombrelloni sono sostituiti da tamerici a impatto zero.',
-            img: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80'
-          },
-          {
-            title: 'I Concerti all\'Alba sulla Spiaggia',
-            text: 'La musica che saluta il nuovo giorno in riva al mare: l\'appuntamento più suggestivo delle estati romagnole.',
-            img: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600&q=80'
-          },
-          {
-            title: 'Spiagge Sicure per Famiglie',
-            text: 'Fondali bassi e sabbiosi ideali per bambini, assistenza continua dei bagnini e accessibilità certificata.',
-            img: 'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=600&q=80'
           }
         ]
       },
@@ -883,8 +895,8 @@
       }
     }
 
-    // Inizializzazione tema predefinito
-    switchTheme('cultura');
+    // Inizializzazione sulla landing Mare e Spiagge
+    switchTheme('spiagge');
 
     // Toggle chip form
     document.addEventListener('click', e => {
