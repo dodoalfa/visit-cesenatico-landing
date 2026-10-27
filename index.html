@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visit Cesenatico - Landing Tematiche</title>
+  <!-- Font Istituzionale Raleway -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --vc-blue: #0072CE;
+      --vc-orange: #F26522;
+      --vc-yellow: #FFC20E;
+      --text-dark: #1E293B;
+      --text-muted: #64748B;
+      --bg-light: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --border: #E2E8F0;
+      /* Tema attivo dinamico */
+      --theme-color: #9E3B20;
+      --theme-light: #FDF6F0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Raleway', sans-serif;
+      color: var(--text-dark);
+      background-color: #E2E8F0;
+      line-height: 1.5;
+    }
+
+    /* BARRA STRUMENTI SUPERIORE */
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #0F172A;
+      color: white;
+      padding: 12px 24px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .toolbar-title {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--vc-yellow);
+    }
+    .theme-selector {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .theme-btn {
+      background: #1E293B;
+      border: 1px solid #334155;
+      color: #94A3B8;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .theme-btn.active {
+      background: var(--vc-blue);
+      color: white;
+      border-color: var(--vc-blue);
+    }
+    .view-toggle {
+      display: flex;
+      gap: 8px;
+      background: #1E293B;
+      padding: 4px;
+      border-radius: 8px;
+    }
+    .view-btn {
+      background: transparent;
+      border: none;
+      color: #94A3B8;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .view-btn.active {
+      background: #334155;
+      color: white;
+    }
+
+    /* CONTENITORE PROTOTIPO */
+    .viewport-container {
+      display: flex;
+      justify-content: center;
+      padding: 24px;
+      transition: all 0.3s ease;
+    }
+    .page-wrapper {
+      background: white;
+      width: 100%;
+      max-width: 1280px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: max-width 0.3s ease;
+    }
+    .page-wrapper.mobile-view {
+      max-width: 414px;
+      border: 12px solid #0F172A;
+      border-radius: 40px;
+    }
+
+    /* HEADER SITO */
+    .site-header {
+      background: white;
+      padding: 16px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .logo-container svg {
+      height: 48px;
+      width: auto;
+    }
+    .header-nav {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .header-cta {
+      background: var(--vc-orange);
+      color: white;
+      padding: 8px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    /* HERO SECTION TEMATIZZATA */
+    .hero-section {
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      padding: 100px 32px;
+      color: white;
+      min-height: 480px;
+      display: flex;
+      align-items: center;
+      transition: background-image 0.5s ease;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(15, 23, 42, 0.85) 0%, rgba(15, 23, 42, 0.4) 100%);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      max-width: 650px;
+    }
+    .hero-tag {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: var(--theme-color);
+      color: white;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+    .hero-title {
+      font-size: 40px;
+      line-height: 1.15;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+    .hero-desc {
+      font-size: 18px;
+      font-family: 'Open Sans', sans-serif;
+      margin-bottom: 24px;
+      opacity: 0.95;
+    }
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--theme-color);
+      color: white;
+      padding: 14px 28px;
+      border-radius: 999px;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+    }
+
+    /* SEZIONE PILLARS */
+    .section {
+      padding: 64px 32px;
+    }
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 48px;
+    }
+    .section-subtitle {
+      color: var(--theme-color);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+    .section-title {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--text-dark);
+    }
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+    }
+    .card-img {
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+    }
+    .card-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .card-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .card-text {
+      font-size: 14px;
+      color: var(--text-muted);
+      font-family: 'Open Sans', sans-serif;
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+    .card-link {
+      color: var(--theme-color);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* GABBIA COMUNE: FORM IAT */
+    .iat-block {
+      background: var(--bg-light);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 64px 32px;
+    }
+    .iat-card {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      overflow: hidden;
+    }
+    .iat-info {
+      background: #0F172A;
+      color: white;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .iat-info h3 {
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: var(--vc-yellow);
+    }
+    .iat-info p {
+      font-size: 14px;
+      color: #94A3B8;
+      font-family: 'Open Sans', sans-serif;
+      margin-bottom: 24px;
+    }
+    .iat-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+      font-size: 14px;
+    }
+    .whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: #25D366;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      margin-top: 20px;
+    }
+    .iat-form {
+      padding: 40px;
+    }
+    .form-group {
+      margin-bottom: 16px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--text-dark);
+    }
+    .form-control {
+      width: 100%;
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      font-family: inherit;
+      font-size: 14px;
+    }
+    .chips-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 6px;
+    }
+    .chip {
+      font-size: 12px;
+      padding: 6px 12px;
+      background: var(--bg-light);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .chip.active {
+      background: var(--theme-color);
+      color: white;
+      border-color: var(--theme-color);
+    }
+    .form-submit {
+      width: 100%;
+      background: var(--vc-blue);
+      color: white;
+      border: none;
+      padding: 14px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 8px;
+    }
+
+    /* GABBIA COMUNE: PIANIFICA & LOGISTICA */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 32px;
+    }
+    .service-box {
+      background: var(--bg-light);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+    }
+    .service-icon {
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+    .service-box h4 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .service-box p {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    /* FOOTER */
+    .site-footer {
+      background: #0B132B;
+      color: #94A3B8;
+      padding: 48px 32px;
+      font-size: 13px;
+      font-family: 'Open Sans', sans-serif;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .iat-card { grid-template-columns: 1fr; }
+      .hero-title { font-size: 28px; }
+      .site-header { padding: 12px 16px; }
+      .section { padding: 40px 16px; }
+      .iat-block { padding: 40px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BARRA DI CONTROLLO PROTOTIPO -->
+  <div class="toolbar">
+    <div class="toolbar-title">Visit Cesenatico • Prototipo Landing</div>
+    <div class="theme-selector">
+      <button class="theme-btn active" onclick="setTheme('cultura')">1. Cultura & Borgo</button>
+      <button class="theme-btn" onclick="setTheme('spiagge')">2. Spiagge & Mare</button>
+      <button class="theme-btn" onclick="setTheme('food')">3. Food & Sapori</button>
+      <button class="theme-btn" onclick="setTheme('sport')">4. Sport & Outdoor</button>
+    </div>
+    <div class="view-toggle">
+      <button class="view-btn active" id="btn-desktop" onclick="setView('desktop')">Desktop</button>
+      <button class="view-btn" id="btn-mobile" onclick="setView('mobile')">Smartphone</button>
+    </div>
+  </div>
+
+  <!-- VIEWPORT CONTAINER -->
+  <div class="viewport-container">
+    <div class="page-wrapper" id="page-wrapper">
+      
+      <!-- HEADER UFFICIALE -->
+      <header class="site-header">
+        <div class="logo-container">
+          <!-- Logo Vettoriale Visit Cesenatico -->
+          <svg viewBox="0 0 320 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M26 4C13.85 4 4 13.85 4 26C4 32.2 6.55 37.8 10.65 41.85C9.8 40.5 9.3 38.9 9.3 37.2C9.3 32.8 12.8 29.3 17.2 29.3C21.6 29.3 25.1 32.8 25.1 37.2C25.1 43.1 20.3 47.9 14.4 47.9C13 47.9 11.7 47.6 10.5 47.1C14.7 51.3 20.5 54 26.9 54C40.2 54 51 43.2 51 29.9C51 29.6 51 29.3 51 29C49.2 29.6 47.2 30 45.1 30C34.6 30 26 21.4 26 10.9C26 8.5 26.5 6.2 27.3 4.1C26.9 4 26.4 4 26 4Z" fill="#F26522"/>
+            <path d="M51 29.9C51 43.2 40.2 54 26.9 54C20.5 54 14.7 51.3 10.5 47.1C12.5 47.7 14.6 48 16.8 48C28.4 48 37.8 38.6 37.8 27C37.8 23.4 36.9 20 35.3 17.1C44.7 19.3 51 27.8 51 29.9Z" fill="#0072CE"/>
+            <circle cx="34" cy="12" r="6" fill="#FFC20E"/>
+            <!-- Lettering VISIT CESENATICO con lambda -->
+            <text x="64" y="38" font-family="'Raleway', sans-serif" font-weight="800" font-size="24" fill="#0072CE" letter-spacing="1">VISIT CESEN<tspan fill="#0072CE">Λ</tspan>TICO</text>
+          </svg>
+        </div>
+        <div class="header-nav">
+          <span style="color: var(--text-muted); font-size: 13px;">IAT: 0547 79435</span>
+          <a href="#iat-form" class="header-cta">Richiedi Info</a>
+        </div>
+      </header>
+
+      <!-- TESTATA TEMATICA DINAMICA (BLOCCO A) -->
+      <section class="hero-section" id="hero-bg">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <span class="hero-tag" id="hero-tag">Cultura e Buon Vivere</span>
+          <h1 class="hero-title" id="hero-title">Passeggia nella storia tra le vele di Leonardo</h1>
+          <p class="hero-desc" id="hero-desc">Vivi la magia del Porto Canale, l'antico borgo marinaro e il fascino senza tempo della Marineria Romagnola.</p>
+          <a href="#pillars" class="hero-cta" id="hero-cta">Scopri le esperienze <span>↓</span></a>
+        </div>
+      </section>
+
+      <!-- PILLARS TEMATICI -->
+      <section class="section" id="pillars">
+        <div class="section-header">
+          <div class="section-subtitle" id="pillars-subtitle">Esperienze Selezionate</div>
+          <h2 class="section-title" id="pillars-title">I tesori autentici del borgo marinaro</h2>
+        </div>
+        <div class="cards-grid" id="cards-container">
+          <!-- Popolato dinamicamente da JS -->
+        </div>
+      </section>
+
+      <!-- GABBIA COMUNE (BLOCCO B) -->
+      
+      <!-- 1. MODULO CONTATTO IAT -->
+      <section class="iat-block" id="iat-form">
+        <div class="iat-card">
+          <div class="iat-info">
+            <div>
+              <h3>Ufficio IAT Informazioni</h3>
+              <p>Il personale ufficiale del Comune di Cesenatico è a tua disposizione per pianificare al meglio il tuo soggiorno.</p>
+              <div class="iat-contact-item">📍 Viale Roma 112, 47042 Cesenatico</div>
+              <div class="iat-contact-item">📞 Tel: 0547 79435</div>
+              <div class="iat-contact-item">✉️ iat@comune.cesenatico.fc.it</div>
+            </div>
+            <a href="https://wa.me/39054779435" target="_blank" class="whatsapp-btn">💬 Scrivici su WhatsApp</a>
+          </div>
+          <div class="iat-form">
+            <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 16px;">Richiedi informazioni sul soggiorno</h4>
+            <div class="form-group">
+              <label>Nome e Cognome *</label>
+              <input type="text" class="form-control" placeholder="Il tuo nome">
+            </div>
+            <div class="form-group">
+              <label>Indirizzo Email *</label>
+              <input type="email" class="form-control" placeholder="nome@email.it">
+            </div>
+            <div class="form-group">
+              <label>Periodo di viaggio previsto</label>
+              <input type="text" class="form-control" placeholder="es. Fine settimana a Giugno">
+            </div>
+            <div class="form-group">
+              <label>A cosa sei interessato?</label>
+              <div class="chips-group">
+                <span class="chip active">Hotel & Alloggi</span>
+                <span class="chip">Eventi in città</span>
+                <span class="chip">Ristoranti marinari</span>
+                <span class="chip">Cicloturismo</span>
+              </div>
+            </div>
+            <button class="form-submit" onclick="alert('Richiesta inviata con successo allo staff IAT!')">Invia richiesta allo staff IAT</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. PIANIFICA IL SOGGIORNO -->
+      <section class="section" style="background: white;">
+        <div class="section-header">
+          <div class="section-subtitle">Organizza il tuo viaggio</div>
+          <h2 class="section-title">Dove dormire a Cesenatico</h2>
+        </div>
+        <div class="services-grid">
+          <div class="service-box">
+            <div class="service-icon">🏨</div>
+            <h4>Hotel sul Mare</h4>
+            <p>Accesso diretto alla spiaggia e massima comodità.</p>
+          </div>
+          <div class="service-box">
+            <div class="service-icon">🚴</div>
+            <h4>Bike Hotel</h4>
+            <p>Officine attrezzate, guide cicloturistiche e menu sportivi.</p>
+          </div>
+          <div class="service-box">
+            <div class="service-icon">👨‍👩‍👧‍👦</div>
+            <h4>Family Hotel</h4>
+            <p>Animazione per bambini, spiagge sicure e fondali bassi.</p>
+          </div>
+          <div class="service-box">
+            <div class="service-icon">⛺</div>
+            <h4>Camping & Villaggi</h4>
+            <p>Vacanze all'aria aperta immerse nella quiete della pineta.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER ISTITUZIONALE -->
+      <footer class="site-footer">
+        <p><strong>Visit Cesenatico</strong> - Portale Ufficiale di Promozione Turistica del Comune di Cesenatico</p>
+        <p style="margin-top: 8px;">Ufficio IAT • Viale Roma 112, 47042 Cesenatico (FC) • Tel. 0547 79435</p>
+      </footer>
+
+    </div>
+  </div>
+
+  <script>
+    const themesData = {
+      cultura: {
+        color: '#9E3B20',
+        bg: 'https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=1400&q=80',
+        tag: 'Cultura e Buon Vivere',
+        title: 'Passeggia nella storia tra le vele di Leonardo',
+        desc: 'Vivi la magia del Porto Canale, l\'antico borgo marinaro e il fascino senza tempo della Marineria Romagnola.',
+        pillarsSubtitle: 'Patrimonio e Tradizioni',
+        pillarsTitle: 'I tesori da non perdere nel borgo',
+        cards: [
+          {
+            title: 'Il Porto Canale Leonardesco',
+            text: 'Disegnato da Leonardo da Vinci nel 1502, è l\'arteria pulsante di Cesenatico dove storia e vita quotidiana si incontrano.',
+            img: 'https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=600&q=80'
+          },
+          {
+            title: 'Museo della Marineria Galleggiante',
+            text: 'L\'unico museo galleggiante in Italia con le antiche vele al terzo spiegate, simbolo d\'identità marinara.',
+            img: 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=600&q=80'
+          },
+          {
+            title: 'Piazza delle Conserve',
+            text: 'Le suggestive ghiacciaie storiche scavate nel terreno, dove si conservava il pescato fresco dell\'Adriatico.',
+            img: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80'
+          }
+        ]
+      },
+      spiagge: {
+        color: '#0072CE',
+        bg: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1400&q=80',
+        tag: 'Spiagge e Mare',
+        title: 'Bandiera Blu da oltre 30 anni: relax e libertà sul mare',
+        desc: 'Ampie distese di sabbia dorata, stabilimenti all\'avanguardia, spiagge libere ecosostenibili e concerti all\'alba.',
+        pillarsSubtitle: 'La Riviera per Tutti',
+        pillarsTitle: 'Vivere il mare tra relax e natura',
+        cards: [
+          {
+            title: 'Spiaggia delle Tamerici',
+            text: 'Un\'oasi verde unica nel suo genere dove gli ombrelloni sono sostituiti da alberi di tamerici a impatto zero.',
+            img: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80'
+          },
+          {
+            title: 'Concerti all\'Alba sulla Spiaggia',
+            text: 'La musica che incontra le prime luci del giorno sul mare: l\'evento più amato delle mattine estive.',
+            img: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600&q=80'
+          },
+          {
+            title: 'Spiagge Sicure e Family Friendly',
+            text: 'Fondali bassi e sabbiosi ideali per bambini, assistenza bagnanti continua e servizi d\'accessibilità certificati.',
+            img: 'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=600&q=80'
+          }
+        ]
+      },
+      food: {
+        color: '#D84315',
+        bg: 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=1400&q=80',
+        tag: 'Food & Sapori',
+        title: 'Il vero sapore dell\'Adriatico: dal mare alla tavola',
+        desc: 'Assapora il pesce azzurro fresco nei ristoranti sul canale, le ricette dei marinai e la fragranza della piadina romagnola.',
+        pillarsSubtitle: 'Gastronomia Tipica',
+        pillarsTitle: 'Eccellenze gastronomiche romagnole',
+        cards: [
+          {
+            title: 'Il Pesce Azzurro dell\'Adriatico',
+            text: 'Sardoncini, alici e sgombri preparati alla griglia secondo le antiche ricette marinare di Cesenatico.',
+            img: 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=600&q=80'
+          },
+          {
+            title: 'I Ristoranti del Porto Canale',
+            text: 'Cene indimenticabili a lume di candela affacciati sull\'acqua, tra osterie tipiche e ristorazione stellata.',
+            img: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80'
+          },
+          {
+            title: 'La Tradizione della Piadina Romagnola',
+            text: 'Sfornata calda nei chioschi tradizionali, farcita con squacquerone DOP, fichi caramellati o saraghina.',
+            img: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=600&q=80'
+          }
+        ]
+      },
+      sport: {
+        color: '#2E7D32',
+        bg: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=1400&q=80',
+        tag: 'Sport & Outdoor',
+        title: 'La capitale del cicloturismo: pedala dal mare alle colline',
+        desc: 'Sulle strade del Pirata Marco Pantani, dalla leggendaria Nove Colli ai percorsi gravel tra pineta e salsedine.',
+        pillarsSubtitle: 'Vacanze Attive',
+        pillarsTitle: 'Tutto il meglio dello sport a Cesenatico',
+        cards: [
+          {
+            title: 'Sulle Strade di Marco Pantani',
+            text: 'Itinerari iconici che collegano Cesenatico ai borghi collinari di Longiano, Sorrivoli e Carpegna.',
+            img: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=600&q=80'
+          },
+          {
+            title: 'La Granfondo Nove Colli',
+            text: 'La regina delle granfondo cicloturistiche mondiali che ogni anno raduna migliaia di appassionati da tutta Europa.',
+            img: 'https://images.unsplash.com/photo-1517649763962-0c623266ddc0?auto=format&fit=crop&w=600&q=80'
+          },
+          {
+            title: 'Sport Acquatici & Pineta',
+            text: 'Scuole di vela, windsurf e SUP sul litorale, affiancate da circuiti running e fitness immersi nella pineta di Zadina.',
+            img: 'https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=600&q=80'
+          }
+        ]
+      }
+    };
+
+    function setTheme(key) {
+      const data = themesData[key];
+      document.documentElement.style.setProperty('--theme-color', data.color);
+      document.getElementById('hero-bg').style.backgroundImage = `url('${data.bg}')`;
+      document.getElementById('hero-tag').textContent = data.tag;
+      document.getElementById('hero-title').textContent = data.title;
+      document.getElementById('hero-desc').textContent = data.desc;
+      document.getElementById('pillars-subtitle').textContent = data.pillarsSubtitle;
+      document.getElementById('pillars-title').textContent = data.pillarsTitle;
+
+      const container = document.getElementById('cards-container');
+      container.innerHTML = '';
+      data.cards.forEach(card => {
+        container.innerHTML += `
+          <div class="card">
+            <div class="card-img" style="background-image: url('${card.img}')"></div>
+            <div class="card-body">
+              <h3 class="card-title">${card.title}</h3>
+              <p class="card-text">${card.text}</p>
+              <a href="#iat-form" class="card-link">Approfondisci l'esperienza →</a>
+            </div>
+          </div>
+        `;
+      });
+
+      document.querySelectorAll('.theme-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+
+    function setView(view) {
+      const wrapper = document.getElementById('page-wrapper');
+      const btnDesk = document.getElementById('btn-desktop');
+      const btnMob = document.getElementById('btn-mobile');
+      if (view === 'mobile') {
+        wrapper.classList.add('mobile-view');
+        btnMob.classList.add('active');
+        btnDesk.classList.remove('active');
+      } else {
+        wrapper.classList.remove('mobile-view');
+        btnDesk.classList.add('active');
+        btnMob.classList.remove('active');
+      }
+    }
+
+    // Inizializzazione tema di default
+    setTheme('cultura');
+
+    // Gestione click chip interattivi
+    document.addEventListener('click', e => {
+      if (e.target.classList.contains('chip')) {
+        e.target.classList.toggle('active');
+      }
+    });
+  </script>
+</body>
+</html>
