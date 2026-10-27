@@ -33,7 +33,7 @@
       line-height: 1.5;
     }
 
-    /* BARRA DI CONTROLLO PROTOTIPO SUPERIORE */
+    /* BARRA STRUMENTI SUPERIORE */
     .toolbar {
       position: sticky;
       top: 0;
@@ -120,7 +120,7 @@
       border-radius: 44px;
     }
 
-    /* HEADER SITO VISIT CESENATICO */
+    /* HEADER */
     .site-header {
       background: white;
       padding: 16px 36px;
@@ -200,7 +200,7 @@
     }
     .btn-header-cta:hover { opacity: 0.9; }
 
-    /* HERO SECTION TEMATIZZATA */
+    /* HERO */
     .hero-section {
       position: relative;
       background-size: cover;
@@ -210,6 +210,7 @@
       min-height: 500px;
       display: flex;
       align-items: center;
+      background-color: #1E293B; /* Fallback se l'immagine non è ancora caricata */
       transition: background-image 0.4s ease;
     }
     .hero-overlay {
@@ -262,7 +263,7 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.25);
     }
 
-    /* SEZIONE PILLARS TEMATICI */
+    /* SEZIONE PILLARS */
     .section-padding {
       padding: 64px 36px;
     }
@@ -287,7 +288,7 @@
     }
     .cards-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 28px;
     }
     .card-item {
@@ -307,6 +308,7 @@
       height: 220px;
       background-size: cover;
       background-position: center;
+      background-color: #E2E8F0;
     }
     .card-content {
       padding: 24px;
@@ -476,7 +478,7 @@
       background: #005bb5;
     }
 
-    /* GABBIA COMUNE: PIANIFICA & LOGISTICA */
+    /* DOVE DORMIRE */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -534,9 +536,9 @@
 </head>
 <body>
 
-  <!-- BARRA DI CONTROLLO PROTOTIPO SUPERIORE -->
+  <!-- BARRA DI CONTROLLO -->
   <div class="toolbar">
-    <div class="toolbar-title">Visit Cesenatico • Prototipi Landing Tematiche</div>
+    <div class="toolbar-title">Visit Cesenatico • Landing Tematiche</div>
     <div class="theme-selector">
       <button class="theme-btn" onclick="switchTheme('cultura')">1. Cultura &amp; Borgo</button>
       <button class="theme-btn active" onclick="switchTheme('spiagge')">2. Spiagge &amp; Mare</button>
@@ -549,14 +551,13 @@
     </div>
   </div>
 
-  <!-- CONTENITORE PROTOTIPO -->
+  <!-- VIEWPORT CONTAINER -->
   <div class="viewport-container">
     <div class="page-wrapper" id="page-wrapper">
       
       <!-- HEADER CON MARCHIO VISIT CESENATICO + COMUNE DI CESENATICO -->
       <header class="site-header">
         <div class="header-brand-group">
-          <!-- Marchio Ufficiale Visit Cesenatico (Vettoriale Fedele da Brand Book) -->
           <div class="logo-container">
             <svg viewBox="0 0 380 68" fill="none" xmlns="http://www.w3.org/2000/svg">
               <defs>
@@ -583,10 +584,8 @@
             </svg>
           </div>
 
-          <!-- Divisore Grafico -->
           <div class="brand-divider"></div>
 
-          <!-- Stemma e Denominazione Ufficiale Comune di Cesenatico -->
           <div class="comune-logo-box">
             <svg viewBox="0 0 46 54" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M7 11 L10 4 L16 8 L23 3 L30 8 L36 4 L39 11 Z" fill="#94A3B8" stroke="#475569" stroke-width="1.2" stroke-linejoin="round"/>
@@ -612,7 +611,7 @@
         </div>
       </header>
 
-      <!-- BLOCCO A: TESTATA TEMATIZZATA DINAMICA -->
+      <!-- HERO SECTION -->
       <section class="hero-section" id="hero-bg">
         <div class="hero-overlay"></div>
         <div class="hero-content">
@@ -623,25 +622,25 @@
         </div>
       </section>
 
-      <!-- BLOCCO A: PILLARS TEMATICI -->
+      <!-- PILLARS TEMATICI -->
       <section class="section-padding" id="pillars-section">
         <div class="section-header">
           <div class="section-subtitle" id="pillars-subtitle">Esperienze tra Mare e Litorale</div>
           <h2 class="section-title" id="pillars-title">Vivi l'Adriatico autentico</h2>
         </div>
         <div class="cards-grid" id="cards-container">
-          <!-- Popolato dinamicamente via JS -->
+          <!-- Popolato dinamicamente -->
         </div>
       </section>
 
-      <!-- BLOCCO B (GABBIA COMUNE): 1. FORM RICHIESTA INFORMAZIONI IAT -->
+      <!-- FORM IAT -->
       <section class="iat-block-container" id="modulo-iat">
         <div class="iat-card-wrapper">
           <div class="iat-info-sidebar">
             <div>
               <span class="iat-info-badge">Servizio IAT Ufficiale</span>
               <h3>Ufficio Accoglienza Turistica</h3>
-              <p>Chiedi indicazioni personalizzate al personale ufficiale del Comune di Cesenatico per organizzare il tuo soggiorno al mare.</p>
+              <p>Chiedi indicazioni personalizzate al personale ufficiale del Comune di Cesenatico per organizzare il tuo soggiorno.</p>
               <div class="iat-data-row">📍 Viale Roma 112, 47042 Cesenatico (FC)</div>
               <div class="iat-data-row">📞 Tel: 0547 79435</div>
               <div class="iat-data-row">✉️ iat@comune.cesenatico.fc.it</div>
@@ -688,7 +687,7 @@
         </div>
       </section>
 
-      <!-- BLOCCO B (GABBIA COMUNE): 2. DOVE DORMIRE -->
+      <!-- DOVE DORMIRE -->
       <section class="section-padding" style="background: white;">
         <div class="section-header">
           <div class="section-subtitle">Ospitalità Romagnola</div>
@@ -718,7 +717,7 @@
         </div>
       </section>
 
-      <!-- FOOTER ISTITUZIONALE -->
+      <!-- FOOTER -->
       <footer class="site-footer">
         <p style="font-weight: 700; color: white; margin-bottom: 6px;">Visit Cesenatico • Portale Ufficiale di Promozione Turistica</p>
         <p>Comune di Cesenatico • Ufficio IAT • Viale Roma 112, 47042 Cesenatico (FC) • Tel: 0547 79435</p>
@@ -728,11 +727,12 @@
   </div>
 
   <script>
+    /* Configurazione con i nomi reali dei file delle immagini fornite */
     const thematicData = {
       spiagge: {
         color: '#0072CE',
-        /* Vista aerea panoramica della spiaggia, del molo e dei capanni da pesca di Cesenatico */
-        bg: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1400&q=80',
+        /* Foto aerea panoramica della spiaggia e del molo */
+        bg: '18_104.jpg',
         tag: 'Spiagge e Mare',
         title: 'Bandiera Blu da oltre 30 anni: relax e libertà sul mare',
         desc: 'Sabbia dorata, fondali bassi e sicuri per famiglie, grandi regate veliche e la magia dei concerti all\'alba sulla battigia.',
@@ -741,39 +741,39 @@
         cards: [
           {
             title: 'Vela, Catamarani e Regate',
-            text: 'Cesenatico è un punto di riferimento per gli sport del vento: regate storiche, scuole di vela, windsurf e uscite in catamarano a largo.',
-            img: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80'
+            text: 'Cesenatico è un punto di riferimento per gli sport del vento: regate internazionali, scuole di vela, windsurf e uscite in catamarano.',
+            img: 'regata_internazionale_vele_di_pasqua.jpg'
           },
           {
             title: 'I Concerti all\'Alba sulla Battigia',
-            text: 'La musica che saluta il nuovo giorno a filo d\'acqua: orchestre e strumenti acustici mentre il sole sorge all\'orizzonte sul mare.',
-            img: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80'
+            text: 'La musica che saluta il nuovo giorno in riva al mare: orchestre e strumenti acustici mentre il sole sorge all\'orizzonte sull\'Adriatico.',
+            img: 'concerto-allalba visit cesenatico.jpg'
           },
           {
             title: 'Il "Barchèt" e la Tradizione Marinara',
-            text: 'Le antiche barche da pesca a vele al terzo solcano ancora il mare aperto durante le feste del porto e la tradizionale festa garibaldina.',
-            img: 'https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=800&q=80'
+            text: 'Le antiche barche da pesca a vele al terzo solcano il mare aperto durante le feste del porto e la tradizionale festa garibaldina.',
+            img: 'veleggiata di garibaldi (1).JPG'
           },
           {
             title: 'Notti sul Mare e Fuochi Pirotecnici',
             text: 'I grandi spettacoli pirotecnici sul mare, le feste della Notte Rosa e le cene nei locali sui moli accesi dalle luci della sera.',
-            img: 'https://images.unsplash.com/photo-1498931299472-f7a63a5a1cfa?auto=format&fit=crop&w=800&q=80'
+            img: 'fuochi di garibaldi (1).jpg'
           },
           {
             title: 'Spiagge Sicure e Family Friendly',
             text: 'Stabilimenti balneari attrezzati, fondali bassi e sabbiosi ideali per bambini con la garanzia di sicurezza della Bandiera Blu.',
-            img: 'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=800&q=80'
+            img: 'spiaggia_HappyMinds_2021 (15).jpg'
           },
           {
             title: 'Marina di Cesenatico e Darsena',
-            text: 'Il porto turistico moderno a fianco del borgo storico: centinaia di posti barca e servizi per il diportismo nautico.',
-            img: 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=800&q=80'
+            text: 'Il porto turistico moderno a fianco del borgo storico: centinaia di posti barca e servizi dedicati per il diportismo nautico.',
+            img: '18_103.jpg'
           }
         ]
       },
       cultura: {
         color: '#9E3B20',
-        bg: 'https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=1400&q=80',
+        bg: 'porto canale cesenatico.jpg',
         tag: 'Cultura e Buon Vivere',
         title: 'Passeggia nella storia tra le vele di Leonardo',
         desc: 'Vivi l\'autenticità del Porto Canale Leonardesco, le storiche barche del Museo della Marineria e l\'atmosfera viva del borgo romagnolo.',
@@ -783,23 +783,23 @@
           {
             title: 'Il Porto Canale Leonardesco',
             text: 'Progettato da Leonardo da Vinci nel 1502, è il cuore pulsante dove la vita di mare incontra il buon vivere.',
-            img: 'https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=600&q=80'
+            img: 'Museo_Marineria_galleggiante.jpg'
           },
           {
-            title: 'Museo della Marineria Galleggiante',
-            text: 'L\'unico museo galleggiante d\'Italia con le barche tradizionali e le antiche vele al terzo decorate.',
-            img: 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=600&q=80'
+            title: 'Museo della Marineria e Presepe Galleggiante',
+            text: 'L\'unico museo galleggiante d\'Italia che in inverno si trasforma nel celebre Presepe illuminato sull\'acqua.',
+            img: 'Presepe Marineria_classicTOP.jpg'
           },
           {
-            title: 'Piazza delle Conserve',
-            text: 'Le antiche ghiacciaie storiche tronco-coniche scavate nel terreno, dove si conservava il pescato fresco.',
-            img: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80'
+            title: 'Vele Storiche e Tradizione',
+            text: 'I colori ocra e ruggine delle vele al terzo che decorano il canale durante tutta la primavera e l\'estate.',
+            img: 'cesenatico vele primavera.jpg'
           }
         ]
       },
       food: {
         color: '#D84315',
-        bg: 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=1400&q=80',
+        bg: 'porto canale ristorazione.jpg',
         tag: 'Food & Sapori',
         title: 'Il gusto autentico dell\'Adriatico: dal mare alla tavola',
         desc: 'Gusta il pesce azzurro fresco nei ristoranti affacciati sul porto canale, le ricette marinare e la piadina romagnola.',
@@ -807,25 +807,25 @@
         pillarsTitle: 'Eccellenze gastronomiche romagnole',
         cards: [
           {
-            title: 'Il Pesce Azzurro dell\'Adriatico',
-            text: 'Sardoncini, alici e sgombri preparati alla griglia e cotti a scottadito secondo la tradizione marinara.',
-            img: 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=600&q=80'
+            title: 'Azzurro come il Pesce',
+            text: 'La sagra dedicata ai sapori del pescato locale dell\'Adriatico: alici, sardoncini e cefali preparati a scottadito.',
+            img: 'azzurro come il pesce cesenatico (1).jpg'
           },
           {
-            title: 'Cene sul Porto Canale',
-            text: 'Tavoli all\'aperto a bordo banchina tra barche storiche, osterie tipiche e ristorazione stellata.',
-            img: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80'
+            title: 'Cene a Bordo Canale',
+            text: 'Tavoli all\'aperto a bordo banchina tra barche storiche, osterie tipiche e ristorazione d\'eccellenza.',
+            img: 'selezione sloppy estate-182.jpg'
           },
           {
-            title: 'La Piadina Romagnola Tradizionale',
-            text: 'Sfornata calda nei chioschi del borgo, farcita con squacquerone DOP, fichi caramellati o saraghina.',
-            img: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=600&q=80'
+            title: 'Serate e Sapori al Faro',
+            text: 'Atmosfere serali uniche lungo la passeggiata del molo, tra aperitivi e cucina marinara.',
+            img: 'selezione sloppy estate-293.jpg'
           }
         ]
       },
       sport: {
         color: '#2E7D32',
-        bg: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=1400&q=80',
+        bg: 'cesenatico vele primavera.jpg',
         tag: 'Sport & Outdoor',
         title: 'Capitale del cicloturismo: pedala dal mare alle colline',
         desc: 'Sulle strade del Pirata Marco Pantani, dalla leggendaria Granfondo Nove Colli ai percorsi gravel tra pinete e litorale.',
@@ -835,17 +835,17 @@
           {
             title: 'Sulle Strade di Marco Pantani',
             text: 'Itinerari iconici che dal mare salgono verso i borghi collinari di Longiano, Sorrivoli e Carpegna.',
-            img: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=600&q=80'
+            img: 'foto-74.jpg'
           },
           {
-            title: 'La Granfondo Nove Colli',
-            text: 'La manifestazione ciclistica più amata d\'Europa che richiama ogni anno migliaia di atleti da tutto il mondo.',
-            img: 'https://images.unsplash.com/photo-1517649763962-0c623266ddc0?auto=format&fit=crop&w=600&q=80'
+            title: 'Regate e Sport del Vento',
+            text: 'Corsi e uscite in mare con vela, windsurf e catamarani dalle spiagge di Ponente e Levante.',
+            img: 'regata_internazionale_vele_di_pasqua.jpg'
           },
           {
-            title: 'Sport Acquatici e Pineta di Zadina',
-            text: 'Scuole di vela, windsurf, SUP sul mare e circuiti running ombreggiati nella pineta marittima.',
-            img: 'https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=600&q=80'
+            title: 'Running e Circuiti Litorale',
+            text: 'Piste ciclabili continue sul lungomare e percorsi running immersi nella pineta marittima.',
+            img: '18_104.jpg'
           }
         ]
       }
@@ -854,7 +854,7 @@
     function switchTheme(key) {
       const data = thematicData[key];
       document.documentElement.style.setProperty('--theme-color', data.color);
-      document.getElementById('hero-bg').style.backgroundImage = `url('${data.bg}')`;
+      document.getElementById('hero-bg').style.backgroundImage = `url('${encodeURI(data.bg)}')`;
       document.getElementById('hero-tag').textContent = data.tag;
       document.getElementById('hero-title').textContent = data.title;
       document.getElementById('hero-desc').textContent = data.desc;
@@ -866,7 +866,7 @@
       data.cards.forEach(card => {
         container.innerHTML += `
           <div class="card-item">
-            <div class="card-image-box" style="background-image: url('${card.img}')"></div>
+            <div class="card-image-box" style="background-image: url('${encodeURI(card.img)}')"></div>
             <div class="card-content">
               <h3 class="card-heading">${card.title}</h3>
               <p class="card-body-text">${card.text}</p>
