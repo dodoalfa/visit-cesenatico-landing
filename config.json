@@ -1,0 +1,89 @@
+{
+  "site": {
+    "title": "Visit Cesenatico",
+    "tagline": "Portale Ufficiale di Promozione Turistica",
+    "description": "Scopri la Bandiera Blu dell'Adriatico: spiagge, cultura, tradizioni marinare e sport",
+    "lang": "it"
+  },
+  "iat": {
+    "name": "Ufficio Informazioni Turistiche",
+    "phone": "0547 79435",
+    "email": "iat@comune.cesenatico.fc.it",
+    "address": "Viale Roma 112, 47042 Cesenatico (FC)",
+    "hours": "Lun - Dom: 09:00 - 13:00 / 15:00 - 18:30",
+    "whatsapp": "+39054779435"
+  },
+  "themes": {
+    "spiagge": {
+      "id": "spiagge",
+      "label": "Spiagge & Mare",
+      "color": "#0072CE",
+      "description": "Bandiera Blu, vela e tradizioni marinare",
+      "images": {
+        "hero": "images/18_104.jpg",
+        "cards": [
+          "images/regata_internazionale_vele_di_pasqua.jpg",
+          "images/concerto-allalba visit cesenatico.jpg",
+          "images/veleggiata di garibaldi (1).JPG",
+          "images/fuochi di garibaldi (1).jpg",
+          "images/spiaggia_HappyMinds_2021 (15).jpg",
+          "images/18_103.jpg"
+        ]
+      }
+    },
+    "cultura": {
+      "id": "cultura",
+      "label": "Cultura & Borgo",
+      "color": "#9E3B20",
+      "description": "Porto Canale Leonardesco e tradizioni",
+      "images": {
+        "hero": "images/porto canale cesenatico.jpg",
+        "cards": [
+          "images/Museo_Marineria_galleggiante.jpg",
+          "images/Presepe Marineria_classicTOP.jpg",
+          "images/cesenatico vele primavera.jpg"
+        ]
+      }
+    },
+    "food": {
+      "id": "food",
+      "label": "Food & Sapori",
+      "color": "#D84315",
+      "description": "Pesce azzurro e tradizione gastronomica romagnola",
+      "images": {
+        "hero": "images/porto canale ristorazione.jpg",
+        "cards": [
+          "images/azzurro come il pesce cesenatico (1).jpg",
+          "images/selezione sloppy estate-182.jpg",
+          "images/selezione sloppy estate-293.jpg"
+        ]
+      }
+    },
+    "sport": {
+      "id": "sport",
+      "label": "Sport & Outdoor",
+      "color": "#2E7D32",
+      "description": "Cicloturismo e sport nautici",
+      "images": {
+        "hero": "images/cesenatico vele primavera.jpg",
+        "cards": [
+          "images/foto-74.jpg",
+          "images/regata_internazionale_vele_di_pasqua.jpg",
+          "images/18_104.jpg"
+        ]
+      }
+    }
+  },
+  "colors": {
+    "primary": "#0072CE",
+    "secondary": "#F26522",
+    "accent": "#FFC20E",
+    "teal": "#00A3E0",
+    "dark": "#0F172A",
+    "light": "#F8FAFC"
+  },
+  "fonts": {
+    "heading": "'Raleway', sans-serif",
+    "body": "'Open Sans', sans-serif"
+  }
+}

@@ -3,6 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Visit Cesenatico: scopri la Bandiera Blu dell'Adriatico con tematiche di mare, cultura, food e sport. Informazioni turistiche, hotel e esperienze autentiche.">
+  <meta name="keywords" content="Cesenatico, Romagna, spiaggia, turismo, mare, vela, food, sport, vacanze">
+  <meta name="author" content="Visit Cesenatico - Ufficio IAT">
+  <meta property="og:title" content="Visit Cesenatico - Portale di Promozione Turistica">
+  <meta property="og:description" content="Bandiera Blu, vela, tradizioni marinare, food romagnolo e cicloturismo: vivi l'Adriatico autentico.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0072CE">
   <title>Visit Cesenatico - Portale di Promozione Turistica</title>
   <!-- Font Istituzionale Raleway & Open Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -644,11 +651,11 @@
   <!-- BARRA DI CONTROLLO -->
   <div class="toolbar">
     <div class="toolbar-title">Visit Cesenatico • Landing Tematiche</div>
-    <div class="theme-selector">
-      <button class="theme-btn" onclick="switchTheme('cultura')">1. Cultura &amp; Borgo</button>
-      <button class="theme-btn active" onclick="switchTheme('spiagge')">2. Spiagge &amp; Mare</button>
-      <button class="theme-btn" onclick="switchTheme('food')">3. Food &amp; Sapori</button>
-      <button class="theme-btn" onclick="switchTheme('sport')">4. Sport &amp; Outdoor</button>
+    <div class="theme-selector" role="tablist" aria-label="Scegli tema di esplorazione">
+      <button class="theme-btn" onclick="switchTheme('cultura')" role="tab" aria-selected="false">1. Cultura &amp; Borgo</button>
+      <button class="theme-btn active" onclick="switchTheme('spiagge')" role="tab" aria-selected="true">2. Spiagge &amp; Mare</button>
+      <button class="theme-btn" onclick="switchTheme('food')" role="tab" aria-selected="false">3. Food &amp; Sapori</button>
+      <button class="theme-btn" onclick="switchTheme('sport')" role="tab" aria-selected="false">4. Sport &amp; Outdoor</button>
     </div>
     <div class="view-toggle">
       <button class="view-btn active" id="btn-desktop" onclick="setScreenView('desktop')">Desktop</button>
@@ -715,7 +722,7 @@
             <strong>Ufficio Informazioni Turistiche</strong>
             Tel. 0547 79435 • Viale Roma 112
           </div>
-          <a href="#modulo-iat" class="btn-header-cta">Richiedi Info IAT</a>
+          <a href="#modulo-iat" class="btn-header-cta" aria-label="Richiedi informazioni all'Ufficio Informazioni Turistiche">Richiedi Info IAT</a>
         </div>
       </header>
 
@@ -726,7 +733,7 @@
           <span class="hero-pill-badge" id="hero-tag">Spiagge e Mare</span>
           <h1 class="hero-title" id="hero-title">Bandiera Blu da oltre 30 anni: relax e libertà sul mare</h1>
           <p class="hero-desc" id="hero-desc">Sabbia dorata, fondali bassi e sicuri per famiglie, grandi regate veliche e la magia dei concerti all'alba sulla battigia.</p>
-          <a href="#pillars-section" class="hero-cta" id="hero-cta">Scopri le esperienze <span>↓</span></a>
+          <a href="#pillars-section" class="hero-cta" id="hero-cta" aria-label="Scorri verso le esperienze principali">Scopri le esperienze <span aria-hidden="true">↓</span></a>
         </div>
       </section>
 

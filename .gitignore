@@ -1,0 +1,29 @@
+# Immagini (caricate localmente)
+images/
+*.jpg
+*.jpeg
+*.png
+*.webp
+*.gif
+
+# System files
+.DS_Store
+Thumbs.db
+.env
+.env.local
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node (se aggiunti futuri tool)
+node_modules/
+npm-debug.log
+
+# Build
+dist/
+build/
+.cache/
