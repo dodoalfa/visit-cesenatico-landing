@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visit Cesenatico - Preview Design</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Raleway', 'Segoe UI', sans-serif;
+      background: #f5f5f5;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .header {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    h1 { color: #0072CE; font-size: 28px; margin-bottom: 10px; }
+    .subtitle { color: #64748B; font-size: 16px; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+    }
+
+    .card-image {
+      height: 160px;
+      background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      color: #0072CE;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+    .card-content h3 { color: #1E293B; margin-bottom: 10px; font-size: 18px; }
+    .card-content p { color: #64748B; font-size: 14px; line-height: 1.5; }
+
+    .theme-box {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      border-left: 4px solid;
+    }
+    .theme-box.blue { border-left-color: #0072CE; }
+    .theme-box.brown { border-left-color: #9E3B20; }
+    .theme-box.orange { border-left-color: #D84315; }
+    .theme-box.green { border-left-color: #2E7D32; }
+
+    .color-palette {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 15px;
+      margin: 20px 0;
+    }
+    .color-swatch {
+      border-radius: 8px;
+      padding: 15px;
+      text-align: center;
+      color: white;
+      font-weight: bold;
+      font-size: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .info-box {
+      background: #F0F9FF;
+      border: 2px solid #0072CE;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 20px 0;
+      color: #0072CE;
+    }
+    .info-box strong { display: block; margin-bottom: 8px; font-size: 16px; }
+
+    footer {
+      text-align: center;
+      color: #64748B;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #E2E8F0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🎨 Visit Cesenatico - Design System Preview</h1>
+      <p class="subtitle">Landing Page Tematica - Sistema di Design e Componenti</p>
+    </div>
+
+    <div class="info-box">
+      <strong>✅ Design Completato!</strong>
+      Apri <code>index.html</code> nel browser per visualizzare la landing page completa.<br>
+      Le immagini verranno caricate automaticamente dalla cartella <code>/images</code>.
+    </div>
+
+    <h2 style="color: #1E293B; margin: 30px 0 20px; font-size: 22px;">📋 4 Temi Tematici</h2>
+
+    <div class="grid">
+      <div class="theme-box blue">
+        <h3 style="color: #0072CE;">🌊 Spiagge & Mare</h3>
+        <p>Bandiera Blu, vela, regate internazionali, concerti all'alba, tradizioni marinare.</p>
+        <p style="margin-top: 10px; font-size: 12px; color: #94A3B8;">6 card esperienze • Hero photo 18_104.jpg</p>
+      </div>
+
+      <div class="theme-box brown">
+        <h3 style="color: #9E3B20;">🏛️ Cultura & Borgo</h3>
+        <p>Porto Canale Leonardesco, Museo della Marineria, vele storiche, patrimonio.</p>
+        <p style="margin-top: 10px; font-size: 12px; color: #94A3B8;">3 card esperienze • Hero photo porto canale</p>
+      </div>
+
+      <div class="theme-box orange">
+        <h3 style="color: #D84315;">🍽️ Food & Sapori</h3>
+        <p>Pesce azzurro, cene bordo canale, tradizione gastronomica romagnola, piadina.</p>
+        <p style="margin-top: 10px; font-size: 12px; color: #94A3B8;">3 card esperienze • Hero photo porto ristorazione</p>
+      </div>
+
+      <div class="theme-box green">
+        <h3 style="color: #2E7D32;">🚴 Sport & Outdoor</h3>
+        <p>Cicloturismo, Granfondo Nove Colli, strade Marco Pantani, sport nautici.</p>
+        <p style="margin-top: 10px; font-size: 12px; color: #94A3B8;">3 card esperienze • Hero photo vele primavera</p>
+      </div>
+    </div>
+
+    <h2 style="color: #1E293B; margin: 30px 0 20px; font-size: 22px;">🎨 Palette Colori Visit Cesenatico</h2>
+
+    <div class="color-palette">
+      <div class="color-swatch" style="background: #0072CE;">
+        Blu Marino<br><small>#0072CE</small>
+      </div>
+      <div class="color-swatch" style="background: #F26522;">
+        Arancione<br><small>#F26522</small>
+      </div>
+      <div class="color-swatch" style="background: #FFC20E; color: #1E293B;">
+        Giallo Dorato<br><small>#FFC20E</small>
+      </div>
+      <div class="color-swatch" style="background: #00A3E0;">
+        Teal<br><small>#00A3E0</small>
+      </div>
+      <div class="color-swatch" style="background: #9E3B20;">
+        Bordeaux<br><small>#9E3B20</small>
+      </div>
+      <div class="color-swatch" style="background: #2E7D32;">
+        Verde<br><small>#2E7D32</small>
+      </div>
+    </div>
+
+    <h2 style="color: #1E293B; margin: 30px 0 20px; font-size: 22px;">✨ Componenti & Features</h2>
+
+    <div class="grid">
+      <div class="card">
+        <div class="card-image">⚡</div>
+        <div class="card-content">
+          <h3>Hover Effects</h3>
+          <p>Card con elevazione, ombra e border color dinamica on hover.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-image">🔄</div>
+        <div class="card-content">
+          <h3>Theme Switching</h3>
+          <p>Cambia tema con transizioni smooth tra 4 esperienze diverse.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-image">📱</div>
+        <div class="card-content">
+          <h3>Responsive Design</h3>
+          <p>Mobile-first, tablet, desktop con mockup device view.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-image">📋</div>
+        <div class="card-content">
+          <h3>Form IAT</h3>
+          <p>Modulo contatti con chip interattive e WhatsApp integrato.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-image">♿</div>
+        <div class="card-content">
+          <h3>Accessibility</h3>
+          <p>WCAG ARIA labels, semantic HTML, screen reader support.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-image">🔍</div>
+        <div class="card-content">
+          <h3>SEO Optimized</h3>
+          <p>Meta tags, Open Graph, structured data, semantic markup.</p>
+        </div>
+      </div>
+    </div>
+
+    <h2 style="color: #1E293B; margin: 30px 0 20px; font-size: 22px;">📦 File & Struttura</h2>
+
+    <div class="info-box" style="background: #F8FAFC; border-color: #E2E8F0; color: #1E293B;">
+      <strong>Progetti Files:</strong>
+      <ul style="margin-top: 10px; margin-left: 20px;">
+        <li><code>index.html</code> – Landing page completa (36 KB)</li>
+        <li><code>README.md</code> – Documentazione (5.5 KB)</li>
+        <li><code>config.json</code> – Configurazione temi (2.6 KB)</li>
+        <li><code>setup-images.sh</code> – Script verifica immagini</li>
+        <li><code>/images/</code> – Cartella immagini (pronta per upload)</li>
+      </ul>
+    </div>
+
+    <h2 style="color: #1E293B; margin: 30px 0 20px; font-size: 22px;">🚀 Prossimi Step</h2>
+
+    <div class="grid">
+      <div class="card">
+        <div class="card-image">📤</div>
+        <div class="card-content">
+          <h3>1. Carica Immagini</h3>
+          <p>Metti i file nella cartella <code>/images</code></p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-image">✅</div>
+        <div class="card-content">
+          <h3>2. Verifica Setup</h3>
+          <p>Esegui <code>./setup-images.sh</code> per verificare i file</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-image">🌐</div>
+        <div class="card-content">
+          <h3>3. Test Live</h3>
+          <p>Apri <code>index.html</code> e testa i 4 temi</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-image">🚀</div>
+        <div class="card-content">
+          <h3>4. Deploy</h3>
+          <p>Carica su server Visit Cesenatico</p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>Visit Cesenatico Landing Page • Versione 1.1 (Design Refactor)</p>
+      <p style="font-size: 12px; margin-top: 10px;">Created with ❤️ by Domenico Alfano • 27 October 2026</p>
+    </footer>
+  </div>
+</body>
+</html>
