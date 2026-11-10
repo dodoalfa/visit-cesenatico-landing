@@ -548,6 +548,29 @@
       background: #F0F9FF;
       box-shadow: 0 0 0 3px rgba(0, 114, 206, 0.1);
     }
+    .form-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 16px;
+    }
+    .form-check {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--text-muted);
+      font-family: 'Open Sans', sans-serif;
+      margin-bottom: 12px;
+      cursor: pointer;
+      line-height: 1.5;
+    }
+    .form-check input {
+      margin-top: 3px;
+      accent-color: var(--theme-color);
+    }
+    .form-check a {
+      color: var(--theme-color);
+    }
     .chips-container {
       display: flex;
       flex-wrap: wrap;
@@ -672,6 +695,7 @@
       .brand-divider { display: none; }
       .comune-text { display: none; }
       .cards-grid { grid-template-columns: 1fr; }
+      .form-grid-2 { grid-template-columns: 1fr; }
       .toolbar { flex-direction: column; gap: 12px; align-items: flex-start; }
       .theme-selector { width: 100%; flex-wrap: wrap; }
       .view-toggle { width: 100%; }
@@ -761,46 +785,45 @@
               <div class="iat-data-row">✉️ iat@comune.cesenatico.fc.it</div>
               <div class="iat-data-row">🕒 Lun - Dom: 09:00 - 13:00 / 15:00 - 18:30</div>
             </div>
-            <a href="https://wa.me/39054779435" target="_blank" class="whatsapp-btn">
-              <span>💬</span> Scrivici direttamente su WhatsApp
-            </a>
           </div>
           <div class="iat-form-body">
-            <h4 style="font-size: 20px; font-weight: 800; margin-bottom: 6px;">Richiedi informazioni sul tuo viaggio</h4>
-            <p style="font-size: 13px; color: var(--text-muted); font-family: 'Open Sans', sans-serif; margin-bottom: 20px;">
-              Riceverai una risposta dettagliata e materiale informativo utile per il tuo soggiorno.
-            </p>
-            <div class="form-row">
-              <label>Nome e Cognome *</label>
-              <input type="text" class="form-field" placeholder="es. Marco Rossi">
-            </div>
-            <div class="form-row">
-              <label>Indirizzo Email *</label>
-              <input type="email" class="form-field" placeholder="nome@esempio.it">
-            </div>
-            <div class="form-row">
-              <label>Periodo indicativo di soggiorno</label>
-              <input type="text" class="form-field" placeholder="es. Luglio 2026, 1 settimana">
-            </div>
-            <div class="form-row">
-              <label>Cosa ti interessa approfondire?</label>
-              <div class="chips-container">
-                <span class="filter-chip active">Spiagge e Stabilimenti balneari</span>
-                <span class="filter-chip">Ristoranti e Sagre gastronomiche</span>
-                <span class="filter-chip">Cultura, Museo e Visite guidate</span>
-                <span class="filter-chip">Cicloturismo e Sport all'aria aperta</span>
-                <span class="filter-chip">Concerti, Festival ed Eventi</span>
-                <span class="filter-chip">Attività famiglia con bambini</span>
-                <span class="filter-chip">Vita notturna e Aperitivi</span>
-                <span class="filter-chip">Natura, Pineta e Passeggiate</span>
+            <h4 style="font-size: 20px; font-weight: 800; margin-bottom: 20px;">Invia una richiesta di informazioni</h4>
+            <div class="form-grid-2">
+              <div class="form-row">
+                <label>Nome *</label>
+                <input type="text" class="form-field" placeholder="Nome" required>
+              </div>
+              <div class="form-row">
+                <label>Cognome *</label>
+                <input type="text" class="form-field" placeholder="Cognome" required>
+              </div>
+              <div class="form-row">
+                <label>Email *</label>
+                <input type="email" class="form-field" placeholder="nome@esempio.it" required>
+              </div>
+              <div class="form-row">
+                <label>Telefono</label>
+                <input type="tel" class="form-field" placeholder="Telefono">
               </div>
             </div>
             <div class="form-row">
-              <label>Messaggio o richieste specifiche</label>
-              <textarea class="form-field" rows="3" placeholder="Scrivi qui eventuali domande su stabilimenti convenzionati, spiagge libere o noleggi..."></textarea>
+              <label>Città</label>
+              <input type="text" class="form-field" placeholder="Città">
             </div>
+            <div class="form-row">
+              <label>Messaggio</label>
+              <textarea class="form-field" rows="4" placeholder="Scrivi qui la tua richiesta"></textarea>
+            </div>
+            <label class="form-check">
+              <input type="checkbox">
+              <span>Desidero iscrivermi alla newsletter</span>
+            </label>
+            <label class="form-check">
+              <input type="checkbox" required>
+              <span>Acconsento al trattamento dei dati personali come definito all'interno della <a href="https://visitcesenatico.it/informativa-privacy-policy" target="_blank" rel="noopener">Privacy Policy</a> *</span>
+            </label>
             <button class="btn-submit-iat" onclick="alert('Richiesta inviata con successo allo staff IAT!')">
-              Invia richiesta allo staff IAT
+              Invia richiesta
             </button>
           </div>
         </div>
