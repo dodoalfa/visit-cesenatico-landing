@@ -233,18 +233,20 @@
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
-      padding: 120px 40px;
+      padding: 140px 56px 120px;
       color: white;
-      min-height: 550px;
+      min-height: 640px;
       display: flex;
-      align-items: center;
-      background-color: linear-gradient(135deg, #0072CE 0%, #00A3E0 100%);
+      align-items: flex-end;
+      background-color: #0B1120;
       transition: background-image 0.4s ease;
     }
     .hero-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(90deg, rgba(15, 23, 42, 0.8) 0%, rgba(15, 23, 42, 0.4) 50%, rgba(15, 23, 42, 0.2) 100%);
+      background:
+        linear-gradient(180deg, rgba(11, 17, 32, 0.15) 0%, rgba(11, 17, 32, 0.35) 40%, rgba(11, 17, 32, 0.9) 100%),
+        linear-gradient(90deg, rgba(11, 17, 32, 0.55) 0%, rgba(11, 17, 32, 0) 70%);
     }
     .hero-content {
       position: relative;
@@ -264,11 +266,12 @@
       margin-bottom: 16px;
     }
     .hero-title {
-      font-size: 40px;
-      line-height: 1.15;
-      font-weight: 800;
-      margin-bottom: 16px;
-      letter-spacing: -0.5px;
+      font-size: 56px;
+      line-height: 1.05;
+      font-weight: 900;
+      margin-bottom: 18px;
+      letter-spacing: -1px;
+      text-shadow: 0 2px 24px rgba(0, 0, 0, 0.25);
     }
     .hero-desc {
       font-size: 17px;
@@ -305,6 +308,15 @@
       max-width: 700px;
       margin: 0 auto 44px;
     }
+    .section-header::after {
+      content: '';
+      display: block;
+      width: 56px;
+      height: 3px;
+      margin: 18px auto 0;
+      border-radius: 2px;
+      background: var(--theme-color);
+    }
     .section-subtitle {
       color: var(--theme-color);
       font-weight: 900;
@@ -335,32 +347,52 @@
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 28px;
       transition: opacity 0.3s ease;
+      counter-reset: card;
     }
     .card-item {
       background: white;
       border: 1px solid var(--border);
-      border-radius: 16px;
+      border-radius: 6px;
       overflow: hidden;
       transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       display: flex;
       flex-direction: column;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      counter-increment: card;
     }
     .card-item:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.14);
       border-color: var(--theme-color);
     }
     .card-item:hover .card-image-box {
       filter: brightness(1.05);
     }
     .card-image-box {
-      height: 220px;
+      height: 240px;
       background-size: cover;
       background-position: center;
-      background-color: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
+      background-color: #0F172A;
       position: relative;
       overflow: hidden;
+    }
+    .card-image-box::before {
+      content: counter(card, decimal-leading-zero);
+      position: absolute;
+      top: 14px;
+      left: 16px;
+      z-index: 2;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      color: white;
+      background: var(--theme-color);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+    .card-item:hover .card-image-box {
+      transform: scale(1.04);
+      transition: transform 0.6s ease;
     }
     .card-image-box::after {
       content: '';
@@ -598,13 +630,13 @@
 
     /* FOOTER */
     .site-footer {
-      background: linear-gradient(180deg, #0B1120 0%, #0F172A 100%);
+      background: #0B1120;
       color: #94A3B8;
-      padding: 48px 36px;
+      padding: 56px 36px 40px;
       font-size: 13px;
       font-family: 'Open Sans', sans-serif;
       text-align: center;
-      border-top: 2px solid var(--vc-blue);
+      border-top: 4px solid var(--vc-yellow);
     }
     .site-footer p:first-child {
       color: white;
@@ -628,8 +660,8 @@
 
     @media (max-width: 820px) {
       .iat-card-wrapper { grid-template-columns: 1fr; }
-      .hero-title { font-size: 28px; }
-      .hero-section { padding: 80px 24px; }
+      .hero-title { font-size: 34px; }
+      .hero-section { padding: 110px 24px 80px; min-height: 520px; }
       .site-header { padding: 14px 20px; flex-wrap: wrap; }
       .header-brand-group { width: 100%; margin-bottom: 12px; }
       .header-right { width: 100%; flex-direction: column; gap: 12px; }
