@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food &amp; Sapori | Visit Cesenatico</title>
+  <meta name="description" content="Il sapore autentico della costa romagnola: pesce fresco dei pescatori locali, piatti della tradizione e cene a bordo canale.">
+  <meta name="robots" content="noindex, nofollow">
+  <style>
+    :root {
+      --vc-blue: #D84315;
+      --vc-orange: #F26522;
+      --vc-yellow: #FFC20E;
+      --vc-teal: #00A3E0;
+      --vc-bordeaux: #9E3B20;
+      --vc-green: #2E7D32;
+      --ink: #0F172A;
+      --muted: #475569;
+      --light: #F8FAFC;
+      --radius: 14px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Open Sans', 'Segoe UI', sans-serif;
+      color: var(--ink);
+      background: #fff;
+      line-height: 1.6;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    h1, h2, h3 { font-family: 'Raleway', 'Segoe UI', sans-serif; line-height: 1.2; }
+    .wrap { max-width: 1160px; margin: 0 auto; padding: 0 16px; }
+
+    /* Header */
+    .topbar {
+      background: #fff;
+      border-bottom: 1px solid #E2E8F0;
+      position: sticky; top: 0; z-index: 50;
+    }
+    .topbar .wrap {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 68px; gap: 16px;
+    }
+    .topbar img.logo { height: 42px; width: auto; }
+    .topbar nav { display: flex; gap: 18px; font-size: 14px; font-weight: 600; }
+    .topbar nav a { text-decoration: none; color: var(--ink); }
+    .topbar nav a:hover { color: var(--vc-blue); }
+    .lang { font-size: 12px; color: var(--muted); }
+    @media (max-width: 860px) { .topbar nav { display: none; } }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 78vh;
+      display: flex; align-items: center;
+      color: #fff;
+      background: linear-gradient(rgba(15,23,42,.35), rgba(15,23,42,.7)),
+                  url('images/porto%20canale%20ristorazione.jpg') center/cover no-repeat;
+    }
+    .hero .badge {
+      display: inline-block;
+      background: var(--vc-yellow); color: var(--ink);
+      font-weight: 700; font-size: 13px;
+      padding: 6px 14px; border-radius: 999px;
+      margin-bottom: 18px;
+    }
+    .hero h1 { font-size: clamp(34px, 6vw, 62px); max-width: 760px; margin-bottom: 16px; }
+    .hero p { font-size: 18px; max-width: 620px; opacity: .95; margin-bottom: 28px; }
+    .btn {
+      display: inline-block;
+      background: var(--vc-orange); color: #fff;
+      padding: 14px 26px; border-radius: 999px;
+      font-weight: 700; text-decoration: none;
+      transition: transform .2s ease, background .2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); background: #D9561A; }
+    .btn.outline { background: transparent; border: 2px solid #fff; }
+    .btn.outline:hover { background: #fff; color: var(--ink); }
+
+    section.block { padding: 72px 0; }
+    section.block.alt { background: var(--light); }
+    .eyebrow {
+      color: var(--vc-blue); font-weight: 700; font-size: 13px;
+      letter-spacing: .08em; text-transform: uppercase; margin-bottom: 8px;
+    }
+    h2.title { font-size: clamp(26px, 4vw, 38px); margin-bottom: 14px; }
+    .lead { color: var(--muted); max-width: 680px; margin-bottom: 30px; }
+
+    /* Programma */
+    .programma ol {
+      list-style: none; counter-reset: p;
+      display: grid; gap: 14px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+    .programma li {
+      counter-increment: p;
+      background: #fff; border-radius: var(--radius);
+      padding: 22px 22px 22px 70px; position: relative;
+      box-shadow: 0 2px 8px rgba(0,0,0,.06);
+      font-weight: 600;
+    }
+    .programma li::before {
+      content: counter(p);
+      position: absolute; left: 18px; top: 18px;
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--vc-blue); color: #fff;
+      display: grid; place-items: center; font-weight: 800;
+    }
+    .programma li small { display: block; font-weight: 400; color: var(--muted); margin-top: 4px; }
+    .programma .cta-row { margin-top: 28px; }
+    .btn.ghost { background: var(--vc-blue); }
+    .btn.ghost:hover { background: #005FAF; }
+
+    /* Split (testo + foto) */
+    .split {
+      display: grid; gap: 40px; align-items: center;
+      grid-template-columns: 1fr 1fr;
+    }
+    .split img { border-radius: var(--radius); width: 100%; height: 100%; min-height: 320px; object-fit: cover; box-shadow: 0 10px 26px rgba(0,0,0,.12); }
+    .facts { margin: 18px 0; display: grid; gap: 8px; }
+    .facts span { background: #FFF7E6; border-left: 4px solid var(--vc-yellow); padding: 8px 12px; font-size: 14px; }
+    .text-link { color: var(--vc-blue); font-weight: 700; text-decoration: none; }
+    .text-link:hover { text-decoration: underline; }
+    @media (max-width: 820px) { .split { grid-template-columns: 1fr; } .split img { min-height: 240px; } }
+
+    /* Gallery presepe */
+    .gallery {
+      display: grid; gap: 12px; margin-top: 36px;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-auto-rows: 180px;
+    }
+    .gallery img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; transition: transform .3s ease; }
+    .gallery img:first-child { grid-row: span 2; height: 100%; }
+    .gallery img:hover { transform: scale(1.02); }
+    @media (max-width: 720px) {
+      .gallery { grid-template-columns: 1fr 1fr; grid-auto-rows: 160px; }
+      .gallery img:first-child { grid-column: span 2; grid-row: auto; }
+    }
+
+    /* Cards */
+    .cards { display: grid; gap: 22px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    .card {
+      background: #fff; border-radius: var(--radius); overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,.07);
+      transition: transform .25s ease, box-shadow .25s ease;
+      display: flex; flex-direction: column;
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 10px 22px rgba(0,0,0,.12); }
+    .card img { width: 100%; height: 200px; object-fit: cover; }
+    .card .body { padding: 20px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+    .card h3 { font-size: 19px; }
+    .card p { color: var(--muted); font-size: 15px; }
+    .tag {
+      align-self: flex-start;
+      font-size: 12px; font-weight: 700;
+      background: #E0F2FE; color: var(--vc-blue);
+      padding: 4px 10px; border-radius: 999px;
+    }
+    .tag.green { background: #E8F5E9; color: var(--vc-green); }
+    .tag.orange { background: #FFF0E6; color: var(--vc-orange); }
+    .card .more { margin-top: auto; color: var(--vc-blue); font-weight: 700; text-decoration: none; }
+
+    /* Banner Capodanno */
+    .banner {
+      position: relative; color: #fff; border-radius: 20px; overflow: hidden;
+      padding: 64px 28px; text-align: center;
+      background: linear-gradient(rgba(15,23,42,.45), rgba(15,23,42,.75)),
+                  url('images/porto%20canale%20ristorazione.jpg') center/cover no-repeat;
+    }
+    .banner h2 { font-size: clamp(28px, 5vw, 44px); margin-bottom: 12px; }
+    .banner p { max-width: 620px; margin: 0 auto 26px; font-size: 17px; }
+
+    /* Pasquella */
+    .pasquella { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-radius: 20px; overflow: hidden; background: #fff; box-shadow: 0 8px 24px rgba(0,0,0,.08); }
+    .pasquella img { width: 100%; height: 100%; min-height: 280px; object-fit: cover; }
+    .pasquella .txt { padding: 40px; display: flex; flex-direction: column; justify-content: center; }
+    @media (max-width: 720px) { .pasquella { grid-template-columns: 1fr; } }
+
+    /* Pianifica */
+    .plan-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+    .plan-links a {
+      background: #fff; border-radius: var(--radius); padding: 22px;
+      text-decoration: none; font-weight: 700; color: var(--ink);
+      border-top: 4px solid var(--vc-blue);
+      box-shadow: 0 2px 8px rgba(0,0,0,.06);
+      transition: transform .2s ease;
+    }
+    .plan-links a:hover { transform: translateY(-3px); }
+
+    /* Newsletter */
+    .newsletter {
+      background: linear-gradient(135deg, var(--vc-blue) 0%, var(--vc-teal) 100%);
+      color: #fff; text-align: center; padding: 56px 20px; border-radius: 20px;
+    }
+    .newsletter h2 { margin-bottom: 10px; }
+    .newsletter p { opacity: .95; margin-bottom: 22px; }
+    .btn.yellow { background: var(--vc-yellow); color: var(--ink); }
+    .btn.yellow:hover { background: #F5B800; }
+
+    /* Footer */
+    footer.site-footer {
+      background: var(--ink); color: #CBD5E1; padding: 56px 0 28px;
+      font-size: 14px;
+    }
+    .foot-grid { display: grid; gap: 30px; grid-template-columns: 2fr 1fr 1fr; }
+    footer h4 { color: #fff; margin-bottom: 10px; font-size: 15px; }
+    footer a { color: #CBD5E1; text-decoration: none; display: block; margin-bottom: 6px; }
+    footer a:hover { color: #fff; }
+    .partners { display: flex; flex-wrap: wrap; gap: 18px; align-items: center; margin-top: 18px; }
+    .partners img { height: 44px; width: auto; background: #fff; border-radius: 8px; padding: 6px 10px; }
+    .credit { border-top: 1px solid #1E293B; margin-top: 36px; padding-top: 18px; font-size: 12px; color: #94A3B8; }
+    @media (max-width: 760px) { .foot-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="wrap">
+      <img class="logo" src="images/logo-visit-cesenatico.png" alt="Visit Cesenatico - Portale Ufficiale di Promozione Turistica">
+      <nav aria-label="Menu principale">
+        <a href="#programma">Esperienze</a>
+        <a href="#galleria">Galleria</a>
+        <a href="#scopri">Scopri</a>
+        <a href="#pianifica">Pianifica</a>
+      </nav>
+      <span class="lang">IT · EN · FR · DE · ES</span>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap">
+        <span class="badge">Food &amp; Sapori</span>
+        <h1 id="hero-title">Pesce azzurro, piadina e cene sul Porto Canale</h1>
+        <p>Il sapore autentico della costa romagnola: pesce fresco dei pescatori locali, piatti della tradizione e cene a bordo canale.</p>
+        <a class="btn" href="#programma">Scopri i sapori</a>
+      </div>
+    </section>
+
+    <section class="block programma" id="programma" aria-labelledby="prog-title">
+      <div class="wrap">
+        <div class="eyebrow">Cosa fare</div>
+        <h2 class="title" id="prog-title">Le esperienze principali</h2>
+        <ol>
+          <li>Cene sul Porto Canale</li>
+          <li>Pesce azzurro dei pescatori locali</li>
+          <li>Corso di pasta fresca romagnola</li>
+          <li>Piadina e tradizione gastronomica</li>
+          <li>Sagre gastronomiche</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="block alt" id="scopri" aria-labelledby="split-title">
+      <div class="wrap">
+        <div class="split">
+          <div>
+            <div class="eyebrow">Food &amp; Sapori</div>
+            <h2 class="title" id="split-title">Il pesce azzurro della costa romagnola</h2>
+            <p class="lead" style="margin-bottom:16px">Sardine, alici e sgombri pescati ogni giorno dalla marineria locale, da gustare nelle trattorie del porto o in cucina con i corsi della tradizione.</p>
+            <div class="facts">
+              <span>Pesce fresco dei pescatori locali</span>
+              <span>Cene a bordo canale</span>
+              <span>Corso di pasta fresca romagnola</span>
+            </div>
+            <a class="text-link" href="#">Scopri di più →</a>
+          </div>
+          <img src="images/azzurro%20come%20il%20pesce%20cesenatico%20(1).jpg" alt="Il pesce azzurro della costa romagnola">
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="galleria" aria-label="Galleria fotografica">
+      <div class="wrap">
+        <div class="gallery">
+          <img src="images/selezione%20sloppy%20estate-182.jpg" alt="Food &amp; Sapori: scorcio della località">
+          <img src="images/selezione%20sloppy%20estate-293.jpg" alt="Food &amp; Sapori: scorcio della località">
+          <img src="images/porto%20canale%20ristorazione.jpg" alt="Food &amp; Sapori: scorcio della località">
+        </div>
+      </div>
+    </section>
+
+    <section class="block alt" aria-labelledby="cards-title">
+      <div class="wrap">
+        <div class="eyebrow">Food &amp; Sapori</div>
+        <h2 class="title" id="cards-title">Gusto e tradizione</h2>
+        <div class="cards" style="margin-top:28px">
+          <article class="card">
+            <img src="images/azzurro%20come%20il%20pesce%20cesenatico%20(1).jpg" alt="Pesce azzurro">
+            <div class="body">
+              <span class="tag">Gusto</span>
+              <h3>Pesce azzurro</h3>
+              <p>Il pesce di giornata dei pescatori locali, cucinato alla maniera romagnola.</p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="images/selezione%20sloppy%20estate-182.jpg" alt="Corso di pasta fresca romagnola">
+            <div class="body">
+              <span class="tag">Laboratorio</span>
+              <h3>Corso di pasta fresca romagnola</h3>
+              <p>Tagliatelle e cappelletti fatti a mano, con la guida di una cuoca del territorio.</p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="images/selezione%20sloppy%20estate-293.jpg" alt="Cene sul Porto Canale">
+            <div class="body">
+              <span class="tag">Serata</span>
+              <h3>Cene sul Porto Canale</h3>
+              <p>Una cena a bordo canale, con vista sulle barche e i sapori dell&#x27;Adriatico.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="banner-title">
+      <div class="wrap">
+        <div class="banner">
+          <h2 id="banner-title">Prenota il tuo tavolo sul Porto Canale</h2>
+          <p>Trattorie e ristoranti di Cesenatico ti aspettano con il pesce del giorno.</p>
+          <a class="btn yellow" href="#" style="background:var(--vc-yellow);color:var(--ink)">Scopri i sapori →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="block alt" id="pianifica" aria-labelledby="pian-title">
+      <div class="wrap">
+        <div class="eyebrow">Pianifica il tuo viaggio</div>
+        <h2 class="title" id="pian-title">Tutto quello che ti serve</h2>
+        <div class="plan-links" style="margin-top:24px">
+          <a href="#">Dove dormire</a>
+          <a href="#">Come arrivare</a>
+          <a href="#">Dove mangiare</a>
+          <a href="#">Info e servizi turistici</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="news-title">
+      <div class="wrap">
+        <div class="newsletter">
+          <h2 id="news-title">Rimani con noi</h2>
+          <p>Ricevi in anteprima eventi e offerte a Cesenatico.</p>
+          <a class="btn yellow" href="#" style="background:var(--vc-yellow);color:var(--ink)">Iscriviti alla newsletter</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <img src="images/logo-visit-cesenatico.png" alt="Visit Cesenatico" style="height:44px;width:auto;background:#fff;border-radius:8px;padding:6px 10px;margin-bottom:12px">
+          <p>Sito Ufficiale di Informazione Turistica di Cesenatico e dintorni</p>
+          <p style="margin-top:8px">Viale Roma 112, 47042 Cesenatico (FC)<br>Tel. 0547 79435<br>iat@comune.cesenatico.fc.it</p>
+          <div class="partners">
+            <img src="images/stemma-comune-cesenatico.jpg" alt="Stemma del Comune di Cesenatico">
+          </div>
+        </div>
+        <div>
+          <h4>Il sito</h4>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Cookie Policy</a>
+          <a href="#">Newsletter</a>
+          <a href="#">Area Operatori</a>
+        </div>
+        <div>
+          <h4>Contatti</h4>
+          <a href="#">Chiama lo IAT</a>
+          <a href="#">Contattaci</a>
+          <a href="#">Facebook</a>
+          <a href="#">Instagram</a>
+        </div>
+      </div>
+      <div class="credit">Pagina di anteprima · Food &amp; Sapori · Visit Cesenatico</div>
+    </div>
+  </footer>
+
+</body>
+</html>
